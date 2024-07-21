@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
-            docker stop flask-app || true
-            docker rm flask-app || true
-            docker run -d --name flask-app -p 11348:11348 ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+            sudo docker stop flask-app || true
+            sudo docker rm flask-app || true
+            sudo docker run -d --name flask-app -p 11348:11348 ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
